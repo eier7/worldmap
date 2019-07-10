@@ -1,0 +1,40 @@
+\documentclass[tikz]{standalone}
+\begin{document}
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics{blankmap.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        %\draw[help lines,xstep=.027777777777,ystep=.1] (0,0) grid (1,1);
+        %\foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
+        %\foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
+        \begin{scope}[shift={(-.0277777,0)}]%(lat+180)/360
+            \node[anchor=center] (image) at (.2266,.5) {\includegraphics[scale=.2]{satellite.png}}; % ASAT
+            \node[anchor=center] at (.2266, .47) {\textbf{\huge{98.4$^\circ$W}}};
+            \node[anchor=center] at (.2266, .45) {\textbf{\huge{\textcolor{blue}{ASAT}}}};
+            \node[anchor=center] at (.2266, .43) {\textbf{\huge{\textcolor{green}{AORW}}}};
+
+            \node[anchor=center] (image) at (.3500,.5) {\includegraphics[scale=.2]{satellite.png}}; % AORW
+            \node[anchor=center] at (.3500, .47) {\textbf{\huge{54$^\circ$W}}};
+            \node[anchor=center] at (.3500, .45) {\textbf{\huge{\textcolor{blue}{AORW}}}};
+            \node[anchor=center] at (.3500, .43) {\textbf{\huge{\textcolor{green}{AORE}}}};
+
+            \node[anchor=center] (image) at (.5691,.5) {\includegraphics[scale=.2]{satellite.png}}; % ESAT/AORET
+            \node[anchor=center] at (.5691, .47) {\textbf{\huge{24.9$^\circ$E}}};
+            \node[anchor=center] at (.5691, .45) {\textbf{\huge{\textcolor{blue}{ESAT/AORET}}}};
+            \node[anchor=center] at (.5691, .43) {\textbf{\huge{\textcolor{green}{IOR}}}};
+
+            \node[anchor=center] (image) at (.6775,.5) {\includegraphics[scale=.2]{satellite.png}}; % IOR
+            \node[anchor=center] at (.6775, .47) {\textbf{\huge{63.9$^\circ$E}}};
+            \node[anchor=center] at (.6775, .45) {\textbf{\huge{\textcolor{blue}{IOR}}}};
+
+            \node[anchor=center] (image) at (.8986,.5) {\includegraphics[scale=.2]{satellite.png}}; % AUSAT
+            \node[anchor=center] at (.8986, .47) {\textbf{\huge{143.5$^\circ$E}}};
+            \node[anchor=center] at (.8986, .45) {\textbf{\huge{\textcolor{blue}{AUSAT}}}};
+            \node[anchor=center] at (.8986, .43) {\textbf{\huge{\textcolor{green}{POR}}}};
+
+            \node[anchor=center] (image) at (.9944,.5) {\includegraphics[scale=.2]{satellite.png}}; % POR
+            \node[anchor=center] at (.9944, .47) {\textbf{\huge{178$^\circ$E}}};
+            \node[anchor=center] at (.9944, .45) {\textbf{\huge{\textcolor{blue}{POR}}}};
+        \end{scope}
+    \end{scope}
+\end{tikzpicture}
+\end{document}
